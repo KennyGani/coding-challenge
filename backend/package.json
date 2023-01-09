@@ -1,0 +1,8 @@
+{
+  "name": "foundamental-challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/KennyGani/coding-challenge",
+  "author": "Kenny Gani <f.x.kenny0405@gmail.com>",
+  "license": "MIT"
+}
