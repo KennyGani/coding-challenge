@@ -34,6 +34,13 @@ export default function Home() {
                         legacyBehavior
                     >
                         <span>{`${company.name}`}</span>
+                        <br></br>
+                        <span>{`${company.country}`}</span>
+                        <br></br>
+                        <span>{`${company.founding_date}`}</span>
+                        <br></br>
+                        <span>{`${company.description}`}</span>
+                        <br></br>
                     </Link>
                 ))}
             </ul>

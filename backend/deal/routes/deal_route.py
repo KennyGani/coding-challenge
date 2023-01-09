@@ -16,12 +16,20 @@ async def getAllDealsForId(id: int) -> list[DealOutput]:
 
     dealOutputs: list[DealOutput] = []
 
+    date = ""
+    founding_amount = ""
+
     for deal in deals:
+        if deals.date == None:
+            date = "date not specified"
+
+        if deals.founding_amount == None:
+            founding_amount = "founding amount not specified"
         dealOutputs.append(
             DealOutput(
                 company_id=deal.company_id,
-                date=deal.date,
-                founding_amount=deal.founding_amount,
+                date=date,
+                founding_amount=founding_amount,
                 founding_round=deal.founding_round,
             )
         )
