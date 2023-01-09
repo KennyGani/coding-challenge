@@ -5,15 +5,13 @@ import styles from './../../styles/Home.module.css';
 
 export default function Home() {
     const [companiesList, setDealsList] = useState([]);
-    const [companyName, setCompanyName] = useState('');
 
     async function getAllDealsForId() {
         const searchParams = new URLSearchParams(document.location.search);
 
         const id = searchParams.get('id');
-        const companyName = searchParams.get('companyName');
 
-        if (id == null || companyName == null) {
+        if (id == null) {
             throw 0;
         }
 
@@ -23,7 +21,6 @@ export default function Home() {
         console.log(id);
 
         setDealsList(dealsOutput);
-        setCompanyName(companyName);
     }
 
     useEffect(() => {
@@ -33,7 +30,7 @@ export default function Home() {
     return (
         <>
             <ul className={styles.main}>
-                <h1>Deals with {companyName}:</h1>
+                <h1>Deals:</h1>
                 {companiesList.map((deal: any) => (
                     <div key={deal.company_id}>
                         <br></br>
