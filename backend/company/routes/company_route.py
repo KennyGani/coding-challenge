@@ -17,27 +17,15 @@ async def getAllCompanies() -> list[CompanyOutput]:
 
     companyOutputs: list[CompanyOutput] = []
 
-    country = ""
-    founding_date = ""
-    description = ""
-
     for company in companies:
-        if company.country == None:
-            country == "country not specified"
-
-        if company.founding_date == None:
-            founding_date == "founding date not specified"
-
-        if company.description == None:
-            description == "description not specified"
 
         companyOutputs.append(
             CompanyOutput(
                 company_id=company.company_id,
                 name=company.name,
-                country=country,
-                founding_date=founding_date,
-                description=description,
+                country=company.country,
+                founding_date=company.founding_date,
+                description=company.description,
             )
         )
 
