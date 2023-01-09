@@ -1,1 +1,1 @@
-from .outputs.company_output_schema import *
+from .outputs.deal_output_schema import *

@@ -20,10 +20,11 @@ async def getAllCompanies() -> list[CompanyOutput]:
     for company in companies:
         companyOutputs.append(
             CompanyOutput(
+                company_id=company.company_id,
                 name=company.name,
-                email=company.email,
-                gender=company.gender,
-                classKey=company.classKey,
+                country=company.country,
+                founding_date=company.founding_date,
+                description=company.description,
             )
         )
 

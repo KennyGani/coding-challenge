@@ -12,7 +12,7 @@ class CompanyService:
 
     # this variable must only be created once
     def __init__(self) -> None:
-        print("company service is created")
+        print("Deal service is created")
 
     async def getAllDealsForId(self, db: Session, id: int) -> list[Deal]:
         try:

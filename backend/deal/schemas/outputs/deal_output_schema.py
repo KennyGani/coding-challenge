@@ -37,7 +37,7 @@ class DealOutput(BaseModel):
             )
         return value
 
-    @validator("founding amount")
+    @validator("founding_amount")
     def founding_amount_must_not_empty(cls, value):
         if value == "":
             raise HTTPException(

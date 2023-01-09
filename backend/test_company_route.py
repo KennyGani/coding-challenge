@@ -21,7 +21,7 @@ async def test_get_all_companies_when_empty():
 
 
 @pytest.mark.asyncio
-async def test_get_all_students_when_not_empty():
+async def test_get_all_companies_when_not_empty():
     route.session.execute("drop table companies")
     config.db.Base.metadata.create_all(bind=config.db.engine)
 
@@ -30,7 +30,6 @@ async def test_get_all_students_when_not_empty():
         country="Sweden",
         founding_date="2021-06-11T02:09:34Z",
         description="Secured scalable standardization",
-        company_id=1,
     )
 
     route.session.add(fakeCompany)
@@ -38,13 +37,14 @@ async def test_get_all_students_when_not_empty():
     route.session.refresh(fakeCompany)
 
     response = client.get("/company")
+
     assert response.status_code == 200
     assert response.json() == [
         {
+            "company_id": fakeCompany.company_id,
             "name": fakeCompany.name,
-            "name": fakeCompany.name,
+            "country": fakeCompany.country,
             "founding_date": fakeCompany.founding_date,
             "description": fakeCompany.description,
-            "company_id": fakeCompany.company_id,
         }
     ]

@@ -11,4 +11,4 @@ class DealRepository:
         print("Deal repository is created")
 
     async def getAllDealsForId(self, db: Session, company_id: int) -> list[Deal]:
-        return db.query(Deal).filter(Deal.company_id == company_id)
+        return db.query(Deal).filter(Deal.company_id == company_id).all()
