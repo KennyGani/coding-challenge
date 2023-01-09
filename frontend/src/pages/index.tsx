@@ -25,16 +25,20 @@ export default function Home() {
                 {companiesList.map((company: any) => (
                     <Link
                         key={company.company_id}
-                        href={'/deal/?id=' + company.company_id}
+                        href={'/deal?id=' + company.company_id}
                         legacyBehavior
                     >
-                        <span>{`${company.name}`}</span>
-                        <br></br>
-                        <span>{`${company.country}`}</span>
-                        <br></br>
-                        <span>{`${company.founding_date}`}</span>
-                        <br></br>
-                        <span>{`${company.description}`}</span>
+                        <li>
+                            <span>{`${company.name}`}</span>
+                            <br></br>
+                            <span>{`${company.country}`}</span>
+                            <br></br>
+                            <span>{`${company.founding_date}`}</span>
+                            <br></br>
+                            <span>{`${company.description}`}</span>
+                            <br></br>
+                            <br></br>
+                        </li>
                     </Link>
                 ))}
             </ul>
