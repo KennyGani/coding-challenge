@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
-import { Company } from './routes/company.route';
-import styles from './styles/Home.module.css';
+import { Company } from '../routes/company.route';
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
     const [companiesList, setCompaniesList] = useState([]);

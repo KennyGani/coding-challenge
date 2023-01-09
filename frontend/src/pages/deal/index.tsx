@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-import { Deal } from './../routes/deal.route';
-import styles from './../styles/Home.module.css';
+import { Deal } from '../../routes/deal.route';
+import styles from './../../styles/Home.module.css';
 
 export default function Home() {
     const [companiesList, setDealsList] = useState([]);
