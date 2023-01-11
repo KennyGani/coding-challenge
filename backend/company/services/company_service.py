@@ -1,5 +1,4 @@
 from sqlalchemy.orm import Session
-from dateutil import parser
 
 from ..schemas.index import *
 from ..repositories.index import *
