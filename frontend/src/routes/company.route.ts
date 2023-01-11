@@ -9,4 +9,15 @@ export class Company {
 
         return companies;
     }
+
+    async getCompanyForId(id: string) {
+        const company = await fetch('http://localhost:80/company/' + id, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        return company;
+    }
 }

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
+import { Company } from '../../routes/company.route';
 import { Deal } from '../../routes/deal.route';
 import styles from './../../styles/Home.module.css';
 
 export default function Home() {
     const [companiesList, setDealsList] = useState([]);
+    const [companyName, setCompanyName] = useState('');
 
     async function getAllDealsForId() {
         const searchParams = new URLSearchParams(document.location.search);
@@ -18,9 +20,11 @@ export default function Home() {
         const deals = await new Deal().getAllDealsForId(id);
         const dealsOutput = await deals.json();
 
-        console.log(id);
+        const company = await new Company().getCompanyForId(id);
+        const companyOutput = await company.json();
 
         setDealsList(dealsOutput);
+        setCompanyName(companyOutput.name);
     }
 
     useEffect(() => {
@@ -30,17 +34,18 @@ export default function Home() {
     return (
         <>
             <ul className={styles.main}>
-                <h1>Deals:</h1>
+                <h1>Deals with {companyName}:</h1>
                 {companiesList.map((deal: any) => (
                     <div key={deal.company_id}>
                         <br></br>
-                        <span>{`${deal.date}`}</span>
+                        <span>Deal date : {`${deal.date}`}</span>
                         <br></br>
-                        <span>{`${deal.founding_amount}`}</span>
+                        <span>
+                            funding amount : ${`${deal.funding_amount}`}
+                        </span>
                         <br></br>
-                        <span>{`${deal.founding_round}`}</span>
+                        <span>funding round : {`${deal.funding_round}`}</span>
                         <br></br>
-                        <span>{`${deal.company_id}`}</span>
                     </div>
                 ))}
             </ul>

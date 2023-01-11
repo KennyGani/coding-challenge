@@ -22,6 +22,7 @@ export default function Home() {
         <>
             <ul className={styles.main}>
                 <h1>Company Name:</h1>
+                <br></br>
                 {companiesList.map((company: any) => (
                     <Link
                         key={company.company_id}
@@ -29,13 +30,17 @@ export default function Home() {
                         legacyBehavior
                     >
                         <li>
-                            <span>{`${company.name}`}</span>
+                            <span>name : {`${company.name}`}</span>
                             <br></br>
-                            <span>{`${company.country}`}</span>
+                            <span>country : {`${company.country}`}</span>
                             <br></br>
-                            <span>{`${company.founding_date}`}</span>
+                            <span>
+                                funding date : {`${company.founding_date}`}
+                            </span>
                             <br></br>
-                            <span>{`${company.description}`}</span>
+                            <span>
+                                description : {`${company.description}`}
+                            </span>
                             <br></br>
                             <br></br>
                         </li>

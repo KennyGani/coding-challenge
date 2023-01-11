@@ -30,15 +30,15 @@ async def test_get_all_deals_when_not_empty():
     fakeDeal = model.Deal(
         company_id=1,
         date="1566147853000",
-        founding_round=schema.FoundingRoundEnumOutput.Seed,
-        founding_amount="1670131.0",
+        funding_round=schema.FundingRoundEnumOutput.Seed,
+        funding_amount="1670131.0",
     )
 
     fakeDeal2 = model.Deal(
         company_id=1,
         date="54321345",
-        founding_round=schema.FoundingRoundEnumOutput.SeriesA,
-        founding_amount="9827678.0",
+        funding_round=schema.FundingRoundEnumOutput.SeriesA,
+        funding_amount="9827678.0",
     )
 
     route.session.add(fakeDeal)
@@ -51,13 +51,13 @@ async def test_get_all_deals_when_not_empty():
         {
             "company_id": fakeDeal.company_id,
             "date": fakeDeal.date,
-            "founding_round": fakeDeal.founding_round,
-            "founding_amount": str(fakeDeal.founding_amount),
+            "funding_round": fakeDeal.funding_round,
+            "funding_amount": str(fakeDeal.funding_amount),
         },
         {
             "company_id": fakeDeal2.company_id,
             "date": fakeDeal2.date,
-            "founding_round": fakeDeal2.founding_round,
-            "founding_amount": str(fakeDeal2.founding_amount),
+            "funding_round": fakeDeal2.funding_round,
+            "funding_amount": str(fakeDeal2.funding_amount),
         },
     ]

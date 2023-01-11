@@ -21,8 +21,8 @@ async def getAllDealsForId(id: int) -> list[DealOutput]:
             DealOutput(
                 company_id=deal.company_id,
                 date=deal.date,
-                founding_amount=deal.founding_amount,
-                founding_round=deal.founding_round,
+                funding_amount=deal.funding_amount,
+                funding_round=deal.funding_round,
             )
         )
 

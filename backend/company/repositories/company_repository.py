@@ -15,3 +15,10 @@ class CompanyRepository:
         db: Session,
     ) -> list[Company]:
         return db.query(Company).all()
+
+    async def getCompanyForId(
+        self,
+        db: Session,
+        id: int,
+    ) -> list[Company]:
+        return db.query(Company).filter(Company.company_id == id).first()

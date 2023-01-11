@@ -15,18 +15,11 @@ session = config.db.SessionFactory()
 async def getAllCompanies() -> list[CompanyOutput]:
     companies = await companyService.getAllCompanies(session)
 
-    companyOutputs: list[CompanyOutput] = []
+    return companies
 
-    for company in companies:
 
-        companyOutputs.append(
-            CompanyOutput(
-                company_id=company.company_id,
-                name=company.name,
-                country=company.country,
-                founding_date=company.founding_date,
-                description=company.description,
-            )
-        )
+@companyRoute.get("/company/{id}", response_model=CompanyOutput)
+async def getCompanyForId(id: int) -> CompanyOutput:
+    company = await companyService.getCompanyForId(session, id)
 
-    return companyOutputs
+    return company

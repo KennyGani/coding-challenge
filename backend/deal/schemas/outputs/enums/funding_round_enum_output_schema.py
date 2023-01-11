@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class FoundingRoundEnumOutput(str, Enum):
+class FundingRoundEnumOutput(str, Enum):
     SeriesA = "Series A"
     SeriesB = "Series B"
     SeriesC = "Series C"

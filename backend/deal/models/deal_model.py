@@ -9,12 +9,12 @@ class Deal(Base):
     deal_id = Column(Integer, primary_key=True)
     company_id = Column(Integer)
     date = Column(String(255))
-    founding_round = Column(
+    funding_round = Column(
         Enum(
-            FoundingRoundEnum.SeriesA.value,
-            FoundingRoundEnum.SeriesB.value,
-            FoundingRoundEnum.SeriesC.value,
-            FoundingRoundEnum.Seed.value,
+            FundingRoundEnum.SeriesA.value,
+            FundingRoundEnum.SeriesB.value,
+            FundingRoundEnum.SeriesC.value,
+            FundingRoundEnum.Seed.value,
         )
     )
-    founding_amount = Column(Float)
+    funding_amount = Column(Float)

@@ -1,1 +1,1 @@
-from .founding_round_enum_model import FoundingRoundEnum
+from .funding_round_enum_model import FundingRoundEnum
